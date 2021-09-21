@@ -10,4 +10,13 @@ public class QuantityMeasurement {
             return false;
         }
     }
+    public boolean YardConversion(double feet, double yard){
+        double result = feet*3;
+        if(result == yard){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

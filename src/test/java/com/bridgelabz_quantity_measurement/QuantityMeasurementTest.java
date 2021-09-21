@@ -3,8 +3,6 @@ package com.bridgelabz_quantity_measurement;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class QuantityMeasurementTest {
 
     @Test
@@ -114,5 +112,12 @@ class QuantityMeasurementTest {
         Yard yard1 = new Yard(0.0);
         Yard yard2 = new Yard(0.0);
         Assertions.assertTrue(yard1.getClass().equals(yard2.getClass()));
+    }
+
+    @Test
+    public void given3FeetAnd1Yard_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.YardConversion(1.0, 1.0);
+        Assertions.assertTrue(result);
     }
 }
