@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-09-21T15:33:30" hostname="DESKTOP-U9VT6NQ" time="0.287">
+<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2021-09-21T16:43:33" hostname="DESKTOP-U9VT6NQ" time="0.423">
   <properties/>
-  <testcase name="given0InchAnd0Inch_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.083"/>
-  <testcase name="given0InchAnd1Inch_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.009"/>
-  <testcase name="given0FeetAnd1FeetNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.011"/>
-  <testcase name="given0InchAnd1InchNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.008"/>
-  <testcase name="givenTypeCheckForInch_ShouldReturnEquals()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.005"/>
-  <testcase name="givenReferenceCheckForInch_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.004"/>
-  <testcase name="given0FeetAnd1Feet_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.005"/>
-  <testcase name="given1FeetAnd12Inch_ShouldReturnTrue()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.014"/>
-  <testcase name="given0FeetAnd0Feet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.008"/>
-  <testcase name="givenTypeCheckForFeet_ShouldReturnEquals()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.005"/>
-  <testcase name="givenReferenceCheckForFeet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.043"/>
+  <testcase name="given0YardAnd1Yard_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.133"/>
+  <testcase name="given0InchAnd0Inch_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.011"/>
+  <testcase name="given0InchAnd1Inch_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.021"/>
+  <testcase name="given0FeetAnd1FeetNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.007"/>
+  <testcase name="given0InchAnd1InchNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.002"/>
+  <testcase name="givenTypeCheckForInch_ShouldReturnEquals()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.017"/>
+  <testcase name="given0YardAnd0Yard_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.004"/>
+  <testcase name="givenReferenceCheckForInch_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.026"/>
+  <testcase name="given0FeetAnd1Feet_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.003"/>
+  <testcase name="given1FeetAnd12Inch_ShouldReturnTrue()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.009"/>
+  <testcase name="given0FeetAnd0Feet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.01"/>
+  <testcase name="givenTypeCheckForFeet_ShouldReturnEquals()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.021"/>
+  <testcase name="givenReferenceCheckForFeet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.017"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

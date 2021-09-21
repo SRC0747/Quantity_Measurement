@@ -81,4 +81,38 @@ class QuantityMeasurementTest {
         boolean result = quantityMeasurement.InchConversion(1.0, 12);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given0YardAnd0Yard_ShouldReturnEqual() {
+        Yard yard1 = new Yard(0.0);
+        Yard yard2 = new Yard(0.0);
+        Assertions.assertEquals(yard1, yard2);
+    }
+
+    @Test
+    public void given0YardAnd1Yard_ShouldReturnNotEqual() {
+        Yard yard1 = new Yard(0.0);
+        Yard yard2 = new Yard(1.0);
+        Assertions.assertNotEquals(yard1, yard2);
+    }
+
+    @Test
+    public void given0YardAnd1YardNullValue_ShouldReturnNotEqual() {
+        Yard yard1 = new Yard(0.0);
+        Yard yard2 = null;
+        Assertions.assertNotEquals(yard1, yard2);
+    }
+
+    @Test
+    public void givenReferenceCheckForYard_ShouldReturnEqual() {
+        Yard yard1 = new Yard(2.0);
+        Assertions.assertTrue(yard1.equals(yard1));
+    }
+
+    @Test
+    public void givenTypeCheckForYard_ShouldReturnEquals() {
+        Yard yard1 = new Yard(0.0);
+        Yard yard2 = new Yard(0.0);
+        Assertions.assertTrue(yard1.getClass().equals(yard2.getClass()));
+    }
 }
