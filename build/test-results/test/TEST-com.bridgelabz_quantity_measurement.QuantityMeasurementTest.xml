@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-09-21T08:35:32" hostname="DESKTOP-U9VT6NQ" time="0.122">
+  <properties/>
+  <testcase name="given0FeetAnd1FeetNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.088"/>
+  <testcase name="given0FeetAnd1Feet_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.003"/>
+  <testcase name="given0FeetAnd0Feet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.005"/>
+  <testcase name="givenTypeCheckForFeet_ShouldReturnEquals()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.003"/>
+  <testcase name="given0FeetAnd1FeetReference_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
