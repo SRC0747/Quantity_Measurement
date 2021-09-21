@@ -29,7 +29,7 @@ class QuantityMeasurementTest {
     }
 
     @Test
-    public void given0FeetAnd1FeetReference_ShouldReturnEqual() {
+    public void givenReferenceCheckForFeet_ShouldReturnEqual() {
         Feet feet1 = new Feet(2.0);
         Assertions.assertTrue(feet1.equals(feet1));
     }
@@ -39,5 +39,39 @@ class QuantityMeasurementTest {
         Feet feet1 = new Feet(0.0);
         Feet feet2 = new Feet(0.0);
         Assertions.assertTrue(feet1.getClass().equals(feet2.getClass()));
+    }
+
+    @Test
+    public void given0InchAnd0Inch_ShouldReturnEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0.0);
+        Assertions.assertEquals(inch1, inch2);
+    }
+
+    @Test
+    public void given0InchAnd1Inch_ShouldReturnNotEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(1.0);
+        Assertions.assertNotEquals(inch1, inch2);
+    }
+
+    @Test
+    public void given0InchAnd1InchNullValue_ShouldReturnNotEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = null;
+        Assertions.assertNotEquals(inch1, inch2);
+    }
+
+    @Test
+    public void givenReferenceCheckForInch_ShouldReturnEqual() {
+        Inch inch1 = new Inch(2.0);
+        Assertions.assertTrue(inch1.equals(inch1));
+    }
+
+    @Test
+    public void givenTypeCheckForInch_ShouldReturnEquals() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0.0);
+        Assertions.assertTrue(inch1.getClass().equals(inch2.getClass()));
     }
 }

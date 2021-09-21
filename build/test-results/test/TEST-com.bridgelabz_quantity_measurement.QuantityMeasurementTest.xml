@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-09-21T08:35:32" hostname="DESKTOP-U9VT6NQ" time="0.122">
+<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-09-21T15:08:28" hostname="DESKTOP-U9VT6NQ" time="0.275">
   <properties/>
-  <testcase name="given0FeetAnd1FeetNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.088"/>
-  <testcase name="given0FeetAnd1Feet_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.003"/>
-  <testcase name="given0FeetAnd0Feet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.005"/>
+  <testcase name="given0InchAnd0Inch_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.094"/>
+  <testcase name="given0InchAnd1Inch_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.017"/>
+  <testcase name="given0FeetAnd1FeetNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.016"/>
+  <testcase name="given0InchAnd1InchNullValue_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.009"/>
+  <testcase name="givenTypeCheckForInch_ShouldReturnEquals()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.02"/>
+  <testcase name="givenReferenceCheckForInch_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.005"/>
+  <testcase name="given0FeetAnd1Feet_ShouldReturnNotEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.004"/>
+  <testcase name="given0FeetAnd0Feet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.004"/>
   <testcase name="givenTypeCheckForFeet_ShouldReturnEquals()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.003"/>
-  <testcase name="given0FeetAnd1FeetReference_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.004"/>
+  <testcase name="givenReferenceCheckForFeet_ShouldReturnEqual()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
