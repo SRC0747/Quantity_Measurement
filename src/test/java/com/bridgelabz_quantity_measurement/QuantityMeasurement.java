@@ -19,4 +19,13 @@ public class QuantityMeasurement {
             return false;
         }
     }
+    public boolean YardToInchConversion(double yard, double inch){
+        double result = yard*36;
+        if(result == inch){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

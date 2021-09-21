@@ -120,4 +120,11 @@ class QuantityMeasurementTest {
         boolean result = quantityMeasurement.YardConversion(1.0, 1.0);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given1YardAnd36Inch_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.YardToInchConversion(1.0, 36.0);
+        Assertions.assertTrue(result);
+    }
 }
