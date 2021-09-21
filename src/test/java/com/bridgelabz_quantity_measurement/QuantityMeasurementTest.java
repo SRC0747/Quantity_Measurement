@@ -74,4 +74,11 @@ class QuantityMeasurementTest {
         Inch inch2 = new Inch(0.0);
         Assertions.assertTrue(inch1.getClass().equals(inch2.getClass()));
     }
+
+    @Test
+    public void given1FeetAnd12Inch_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.InchConversion(1.0, 12);
+        Assertions.assertTrue(result);
+    }
 }
