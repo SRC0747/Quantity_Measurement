@@ -28,4 +28,14 @@ public class QuantityMeasurement {
             return false;
         }
     }
+    public boolean InchToCentimeterConversion(double inch, double centimeter){
+        double result1 = inch*2;
+        double result2 = centimeter*5;
+        if(result1 == result2){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

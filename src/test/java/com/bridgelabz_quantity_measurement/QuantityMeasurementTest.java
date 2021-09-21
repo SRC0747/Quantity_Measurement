@@ -161,4 +161,11 @@ class QuantityMeasurementTest {
         Centimeter centimeter2 = new Centimeter(0.0);
         Assertions.assertTrue(centimeter1.getClass().equals(centimeter2.getClass()));
     }
+
+    @Test
+    public void given2InchAnd5Centimeter_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.InchToCentimeterConversion(2.0, 5.0);
+        Assertions.assertTrue(result);
+    }
 }
