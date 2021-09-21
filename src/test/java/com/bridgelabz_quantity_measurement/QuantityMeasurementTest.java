@@ -127,4 +127,38 @@ class QuantityMeasurementTest {
         boolean result = quantityMeasurement.YardToInchConversion(1.0, 36.0);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given0CentimeterAnd0Centimeter_ShouldReturnEqual() {
+        Centimeter centimeter1 = new Centimeter(0.0);
+        Centimeter centimeter2 = new Centimeter(0.0);
+        Assertions.assertEquals(centimeter1, centimeter2);
+    }
+
+    @Test
+    public void given0CentimeterAnd1Centimeter_ShouldReturnNotEqual() {
+        Centimeter centimeter1 = new Centimeter(0.0);
+        Centimeter centimeter2 = new Centimeter(1.0);
+        Assertions.assertNotEquals(centimeter1, centimeter2);
+    }
+
+    @Test
+    public void given0CentimeterAnd1CentimeterNullValue_ShouldReturnNotEqual() {
+        Centimeter centimeter1 = new Centimeter(0.0);
+        Centimeter centimeter2 = null;
+        Assertions.assertNotEquals(centimeter1, centimeter2);
+    }
+
+    @Test
+    public void givenReferenceCheckForCentimeter_ShouldReturnEqual() {
+        Centimeter centimeter1 = new Centimeter(2.0);
+        Assertions.assertTrue(centimeter1.equals(centimeter1));
+    }
+
+    @Test
+    public void givenTypeCheckForCentimeter_ShouldReturnEquals() {
+        Centimeter centimeter1 = new Centimeter(0.0);
+        Centimeter centimeter2 = new Centimeter(0.0);
+        Assertions.assertTrue(centimeter1.getClass().equals(centimeter2.getClass()));
+    }
 }
