@@ -117,7 +117,7 @@ class QuantityMeasurementTest {
     @Test
     public void given3FeetAnd1Yard_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.YardConversion(1.0, 1.0);
+        boolean result = quantityMeasurement.YardConversion(3.0, 1.0);
         Assertions.assertTrue(result);
     }
 
@@ -165,7 +165,7 @@ class QuantityMeasurementTest {
     @Test
     public void given2InchAnd5Centimeter_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.InchToCentimeterConversion(2.0, 5.0);
+        boolean result = quantityMeasurement.InchToCentimeterConversion(1.0, 2.54);
         Assertions.assertTrue(result);
     }
 }

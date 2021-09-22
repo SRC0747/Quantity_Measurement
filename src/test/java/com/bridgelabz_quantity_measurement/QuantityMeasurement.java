@@ -11,8 +11,8 @@ public class QuantityMeasurement {
         }
     }
     public boolean YardConversion(double feet, double yard){
-        double result = feet*3;
-        if(result == yard){
+        double result = yard*3;
+        if(result == feet){
             return true;
         }
         else{
@@ -29,9 +29,8 @@ public class QuantityMeasurement {
         }
     }
     public boolean InchToCentimeterConversion(double inch, double centimeter){
-        double result1 = inch*2;
-        double result2 = centimeter*5;
-        if(result1 == result2){
+        double result1 = inch*2.54;
+        if(result1 == centimeter){
             return true;
         }
         else{
