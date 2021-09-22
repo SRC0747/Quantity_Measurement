@@ -175,4 +175,28 @@ class QuantityMeasurementTest {
         boolean result = quantityMeasurement.InchToCentimeterConversion(1.0, 2.54);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given0FeetAnd0Inch_ShouldReturnEqualLength() {
+        Length feet1 = new Length(Length.Unit.FEET, 0.0);
+        Length inch1 = new Length(Length.Unit.INCH, 0.0);
+        boolean compareCheck = feet1.compare(inch1);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void given1FeetAnd1Inch_ShouldReturnNotEqualLength() {
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        Length inch1 = new Length(Length.Unit.INCH, 1.0);
+        boolean compareCheck = feet1.compare(inch1);
+        Assertions.assertFalse(compareCheck);
+    }
+
+    @Test
+    public void given1FeetAnd1Feet_WhenCompared_ShouldReturnEqualLength() {
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        Length feet2 = new Length(Length.Unit.FEET, 1.0);
+        boolean compareCheck = feet1.compare(feet2);
+        Assertions.assertTrue(compareCheck);
+    }
 }
