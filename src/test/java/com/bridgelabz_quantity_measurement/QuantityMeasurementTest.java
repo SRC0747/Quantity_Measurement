@@ -620,4 +620,11 @@ class QuantityMeasurementTest {
         Temparature fahrenheit2 = new Temparature(Temparature.Unit.FAHRENHEIT, 0.0);
         Assertions.assertTrue(fahrenheit1.getClass().equals(fahrenheit2.getClass()));
     }
+
+    @Test
+    public void given100CentigradeAnd212Fahrenheit_ShouldReturnEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.CentigradeToFahrenheitConversion(1.0, 2.12);
+        Assertions.assertTrue(result);
+    }
 }

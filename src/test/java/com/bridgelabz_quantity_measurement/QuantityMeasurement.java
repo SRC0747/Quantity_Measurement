@@ -73,4 +73,13 @@ public class QuantityMeasurement {
             return false;
         }
     }
+    public boolean CentigradeToFahrenheitConversion(double centigrade, double fahrenheit){
+        double result = centigrade*2.12;
+        if(result == fahrenheit){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
