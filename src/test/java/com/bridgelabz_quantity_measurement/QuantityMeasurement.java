@@ -37,4 +37,13 @@ public class QuantityMeasurement {
             return false;
         }
     }
+    public boolean LitreConversion(double gallon, double litre){
+        double result = gallon*3.78;
+        if(result == litre){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
