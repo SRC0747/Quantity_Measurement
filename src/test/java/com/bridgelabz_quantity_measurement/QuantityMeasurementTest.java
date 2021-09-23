@@ -20,7 +20,7 @@ class QuantityMeasurementTest {
     }
 
     @Test
-    public void given0FeetAnd1FeetNullValue_ShouldReturnNotEqual() {
+    public void given0FeetAndNullValue_ShouldReturnNotEqual() {
         Length feet1 = new Length(Length.Unit.FEET, 0.0);
         Length feet2 = null;
         Assertions.assertNotEquals(feet1, feet2);
@@ -274,5 +274,39 @@ class QuantityMeasurementTest {
         Length inch1 = new Length(Length.Unit.INCH, 2.0);
         Length centimeter1 = new Length(Length.Unit.CENTIMETER, 2.5);
         inch1.sumOfLength(centimeter1);
+    }
+
+    @Test
+    public void given0GallonAnd0Gallon_ShouldReturnEqual() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 0.0);
+        Volume gallon2 = new Volume(Volume.Unit.GALLON, 0.0);
+        Assertions.assertEquals(gallon1, gallon2);
+    }
+
+    @Test
+    public void given0GallonAnd1Gallon_ShouldReturnNotEqual() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 0.0);
+        Volume gallon2 = new Volume(Volume.Unit.GALLON, 1.0);
+        Assertions.assertNotEquals(gallon1, gallon2);
+    }
+
+    @Test
+    public void given0GallonAndNullValue_ShouldReturnNotEqual() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 0.0);
+        Volume gallon2 = null;
+        Assertions.assertNotEquals(gallon1, gallon2);
+    }
+
+    @Test
+    public void givenReferenceCheckForGallon_ShouldReturnEqual() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 2.0);
+        Assertions.assertTrue(gallon1.equals(gallon1));
+    }
+
+    @Test
+    public void givenTypeCheckForGallon_ShouldReturnEquals() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 0.0);
+        Volume gallon2 = new Volume(Volume.Unit.GALLON, 0.0);
+        Assertions.assertTrue(gallon1.getClass().equals(gallon2.getClass()));
     }
 }
