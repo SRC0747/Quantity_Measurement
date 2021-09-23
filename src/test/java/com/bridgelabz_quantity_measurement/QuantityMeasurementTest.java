@@ -309,4 +309,111 @@ class QuantityMeasurementTest {
         Volume gallon2 = new Volume(Volume.Unit.GALLON, 0.0);
         Assertions.assertTrue(gallon1.getClass().equals(gallon2.getClass()));
     }
+
+    @Test
+    public void given0LitreAnd0Litre_ShouldReturnEqual() {
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 0.0);
+        Volume litre2 = new Volume(Volume.Unit.LITRE, 0.0);
+        Assertions.assertEquals(litre1, litre2);
+    }
+
+    @Test
+    public void given0LitreAnd1Litre_ShouldReturnNotEqual() {
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 0.0);
+        Volume litre2 = new Volume(Volume.Unit.LITRE, 1.0);
+        Assertions.assertNotEquals(litre1, litre2);
+    }
+
+    @Test
+    public void given0LitreAndNullValue_ShouldReturnNotEqual(){
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 0.0);
+        Volume litre2 = null;
+        Assertions.assertNotEquals(litre1, litre2);
+    }
+
+    @Test
+    public void givenReferenceCheckForLitre_ShouldReturnEqual() {
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 2.0);
+        Assertions.assertTrue(litre1.equals(litre1));
+    }
+
+    @Test
+    public void givenTypeCheckForLitre_ShouldReturnEquals() {
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 0.0);
+        Volume litre2 = new Volume(Volume.Unit.LITRE, 0.0);
+        Assertions.assertTrue(litre1.getClass().equals(litre2.getClass()));
+    }
+
+    @Test
+    public void given0GallonAnd0Litre_ShouldReturnEqualLength() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 0.0);
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 0.0);
+        boolean compareCheck = gallon1.compare(litre1);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void given1GallonAnd1Litre_ShouldReturnNotEqualLength() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 1.0);
+        boolean compareCheck = gallon1.compare(litre1);
+        Assertions.assertFalse(compareCheck);
+    }
+
+    @Test
+    public void given1GallonAnd1Gallon_ShouldReturnNotEqualLength() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume gallon2 = new Volume(Volume.Unit.LITRE, 1.0);
+        boolean compareCheck = gallon1.compare(gallon2);
+        Assertions.assertFalse(compareCheck);
+    }
+
+    @Test
+    public void given1GallonAnd4Litre_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.LitreConversion(1.0, 3.78);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void given0MlAnd0Ml_ShouldReturnEqual() {
+        Volume ml1 = new Volume(Volume.Unit.ML, 0.0);
+        Volume ml2 = new Volume(Volume.Unit.ML, 0.0);
+        Assertions.assertEquals(ml1, ml2);
+    }
+
+    @Test
+    public void given0MlAnd1Ml_ShouldReturnNotEqual() {
+        Volume ml1 = new Volume(Volume.Unit.ML, 0.0);
+        Volume ml2 = new Volume(Volume.Unit.ML, 1.0);
+        Assertions.assertNotEquals(ml1, ml2);
+    }
+
+    @Test
+    public void given0MlAndNullValue_ShouldReturnNotEqual() {
+        Volume ml1 = new Volume(Volume.Unit.ML, 0.0);
+        Volume ml2 = null;
+        Assertions.assertNotEquals(ml1, ml2);
+    }
+
+    @Test
+    public void givenReferenceCheckForMl_ShouldReturnEqual() {
+        Volume ml1 = new Volume(Volume.Unit.ML, 2.0);
+        Assertions.assertTrue(ml1.equals(ml1));
+    }
+
+    @Test
+    public void givenTypeCheckForMl_ShouldReturnEquals() {
+        Volume ml1 = new Volume(Volume.Unit.ML, 0.0);
+        Volume ml2 = new Volume(Volume.Unit.ML, 0.0);
+        Assertions.assertTrue(ml1.getClass().equals(ml2.getClass()));
+    }
+
+    @Test
+    public void given1LitreAnd1000Ml_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.MlConversion(1.0, 1000.0);
+        Assertions.assertTrue(result);
+    }
+
 }
