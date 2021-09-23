@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-23T07:37:52" hostname="DESKTOP-U9VT6NQ" time="0.059">
+<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-23T07:43:49" hostname="DESKTOP-U9VT6NQ" time="0.073">
   <properties/>
-  <testcase name="givenAdditionOf1FeetAnd2Inch_ShouldReturn14Inch()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.059"/>
+  <testcase name="givenAdditionOf1FeetAnd1Feet_ShouldReturn24Inch()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.073"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

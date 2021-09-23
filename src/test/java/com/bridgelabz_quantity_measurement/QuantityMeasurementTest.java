@@ -261,4 +261,11 @@ class QuantityMeasurementTest {
         Length inch1 = new Length(Length.Unit.INCH, 2.0);
         feet1.sumOfLength(inch1);
     }
+
+    @Test
+    public void givenAdditionOf1FeetAnd1Feet_ShouldReturn24Inch() {
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        Length feet2 = new Length(Length.Unit.FEET, 1.0);
+        feet1.sumOfLength(feet2);
+    }
 }
