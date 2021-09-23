@@ -55,4 +55,22 @@ public class QuantityMeasurement {
             return false;
         }
     }
+    public boolean GramConversion(double kg, double gram){
+        double result = kg*1000;
+        if(result == gram){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean TonToKillogramConversion(double ton, double kg){
+        double result = ton*1000;
+        if(result == kg){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

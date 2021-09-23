@@ -531,4 +531,18 @@ class QuantityMeasurementTest {
         Volume ton2 = new Volume(Volume.Unit.TONNE, 0.0);
         Assertions.assertTrue(ton1.getClass().equals(ton2.getClass()));
     }
+
+    @Test
+    public void given1KgAnd1000Gram_ShouldReturnEquals() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.GramConversion(1.0, 1000.0);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void given1TonAnd1000Kg_ShouldReturnEquals() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean result = quantityMeasurement.TonToKillogramConversion(1.0, 1000.0);
+        Assertions.assertTrue(result);
+    }
 }
