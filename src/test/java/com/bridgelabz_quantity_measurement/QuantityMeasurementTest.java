@@ -268,4 +268,11 @@ class QuantityMeasurementTest {
         Length feet2 = new Length(Length.Unit.FEET, 1.0);
         feet1.sumOfLength(feet2);
     }
+
+    @Test
+    public void givenAdditionOf2InchAnd3Centimeter_ShouldReturn3Inch() {
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        Length centimeter1 = new Length(Length.Unit.CENTIMETER, 2.5);
+        inch1.sumOfLength(centimeter1);
+    }
 }
