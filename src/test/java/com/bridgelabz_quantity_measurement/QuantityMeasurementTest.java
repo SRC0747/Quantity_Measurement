@@ -416,4 +416,17 @@ class QuantityMeasurementTest {
         Assertions.assertTrue(result);
     }
 
+    @Test
+    public void givenAdditionOf1GallonAnd4Litre_ShouldReturn8Litre() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 3.78);
+        gallon1.sumOfVolume(litre1);
+    }
+
+    @Test
+    public void givenAdditionOf1000MlAnd1Litre_ShouldReturn2Litre() {
+        Volume ml1 = new Volume(Volume.Unit.ML, 1000.0);
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 1.0);
+        ml1.sumOfVolume(litre1);
+    }
 }
