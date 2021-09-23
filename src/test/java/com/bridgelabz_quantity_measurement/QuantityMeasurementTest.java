@@ -247,4 +247,11 @@ class QuantityMeasurementTest {
         boolean compareCheck = centimeter1.compareInchToCentimeter(centimeter2);
         Assertions.assertTrue(compareCheck);
     }
+
+    @Test
+    public void givenAdditionOf2InchAnd2Inch_ShouldReturn4Inch() {
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        Length inch2 = new Length(Length.Unit.INCH, 2.0);
+        inch1.sumOfLength(inch2);
+    }
 }

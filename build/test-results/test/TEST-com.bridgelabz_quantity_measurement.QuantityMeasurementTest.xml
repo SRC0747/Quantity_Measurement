@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-22T20:45:21" hostname="DESKTOP-U9VT6NQ" time="0.098">
+<testsuite name="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-23T07:28:27" hostname="DESKTOP-U9VT6NQ" time="0.186">
   <properties/>
-  <testcase name="given1InchAnd1Inch_WhenCompared_ShouldReturnEqualLength()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.098"/>
+  <testcase name="givenAdditionOf2InchAnd2Inch_ShouldReturn4Inch()" classname="com.bridgelabz_quantity_measurement.QuantityMeasurementTest" time="0.186"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
