@@ -545,4 +545,11 @@ class QuantityMeasurementTest {
         boolean result = quantityMeasurement.TonToKillogramConversion(1.0, 1000.0);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given1TonAnd1000Gram_ShouldReturn1001Kg() {
+        Volume ton1 = new Volume(Volume.Unit.TONNE, 1.0);
+        Volume gm1 = new Volume(Volume.Unit.GRAM, 1000.0);
+        ton1.sumOfWeight(gm1);
+    }
 }

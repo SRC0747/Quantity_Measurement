@@ -4,6 +4,8 @@ public class Volume {
 
     private static final double GALLON_TO_LITRE = 3.78;
     private static final double ML_TO_LITRE = 1000.00;
+    private static final double TONNE_TO_KILO_GRAM = 1000.00;
+    private static final double KILO_GRAM_TO_GRAM = 1000.00;
 
     enum Unit{ KG, GRAM, TONNE, LITRE, ML, GALLON  };
 
@@ -32,6 +34,13 @@ public class Volume {
         else if (this.unit.equals(Volume.Unit.ML) && that.unit.equals(Volume.Unit.LITRE))
             sumOfInput = this.value * ML_TO_LITRE + that.value;
         return new Volume(Volume.Unit.LITRE, sumOfInput);
+    }
+
+    public Volume sumOfWeight(Volume that) {
+        double sumOfWeight = 0.0;
+        if (this.unit.equals(Unit.TONNE) && that.unit.equals(Unit.GRAM))
+            sumOfWeight = this.value * TONNE_TO_KILO_GRAM + that.value / KILO_GRAM_TO_GRAM;
+        return new Volume(Unit.KG, sumOfWeight);
     }
 
     @Override
