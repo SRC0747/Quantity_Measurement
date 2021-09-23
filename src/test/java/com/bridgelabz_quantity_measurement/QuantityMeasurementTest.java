@@ -429,4 +429,106 @@ class QuantityMeasurementTest {
         Volume litre1 = new Volume(Volume.Unit.LITRE, 1.0);
         ml1.sumOfVolume(litre1);
     }
+
+    @Test
+    public void given0KgAnd0Kg_ShouldReturnEqual() {
+        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
+        Volume kg2 = new Volume(Volume.Unit.KG, 0.0);
+        Assertions.assertEquals(kg1, kg2);
+    }
+
+    @Test
+    public void given0KgAnd1Kg_ShouldReturnNotEqual() {
+        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
+        Volume kg2 = new Volume(Volume.Unit.KG, 1.0);
+        Assertions.assertNotEquals(kg1, kg2);
+    }
+
+    @Test
+    public void given0KgAndNullValue_ShouldReturnNotEqual() {
+        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
+        Volume kg2 = null;
+        Assertions.assertNotEquals(kg1, kg2);
+    }
+
+    @Test
+    public void givenReferenceCheckForKg_ShouldReturnEqual() {
+        Volume kg1 = new Volume(Volume.Unit.KG, 2.0);
+        Assertions.assertTrue(kg1.equals(kg1));
+    }
+
+    @Test
+    public void givenTypeCheckForKg_ShouldReturnEquals() {
+        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
+        Volume kg2 = new Volume(Volume.Unit.KG, 0.0);
+        Assertions.assertTrue(kg1.getClass().equals(kg2.getClass()));
+    }
+
+    @Test
+    public void given0GramAnd0Gram_ShouldReturnEquals() {
+        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
+        Volume gm2 = new Volume(Volume.Unit.GRAM, 0.0);
+        Assertions.assertEquals(gm1, gm2);
+    }
+
+    @Test
+    public void given0GramAnd1Gram_ShouldReturnNotEquals() {
+        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
+        Volume gm2 = new Volume(Volume.Unit.GRAM, 1.0);
+        Assertions.assertNotEquals(gm1, gm2);
+    }
+
+    @Test
+    public void given0GramAndNullValue_ShouldReturnNotEquals() {
+        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
+        Volume gm2 = null;
+        Assertions.assertNotEquals(gm1, gm2);
+    }
+
+    @Test
+    public void givenReferenceCheckForGram_ShouldReturnEquals() {
+        Volume gram1 = new Volume(Volume.Unit.GRAM, 2.0);
+        Assertions.assertTrue(gram1.equals(gram1));
+    }
+
+    @Test
+    public void givenTypeCheckForGram_ShouldReturnEquals() {
+        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
+        Volume gm2 = new Volume(Volume.Unit.GRAM, 0.0);
+        Assertions.assertTrue(gm1.getClass().equals(gm2.getClass()));
+    }
+
+    @Test
+    public void given0TonAnd0Ton_ShouldReturnEquals() {
+        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
+        Volume ton2 = new Volume(Volume.Unit.TONNE, 0.0);
+        Assertions.assertEquals(ton1, ton2);
+    }
+
+    @Test
+    public void given0TonAnd1Ton_ShouldReturnNotEquals() {
+        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
+        Volume ton2 = new Volume(Volume.Unit.TONNE, 1.0);
+        Assertions.assertNotEquals(ton1, ton2);
+    }
+
+    @Test
+    public void given0TonAndNullValue_ShouldReturnNotEquals() {
+        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
+        Volume ton2 = null;
+        Assertions.assertNotEquals(ton1, ton2);
+    }
+
+    @Test
+    public void givenReferenceCheckForTon_ShouldReturnEquals() {
+        Volume ton1 = new Volume(Volume.Unit.TONNE, 2.0);
+        Assertions.assertTrue(ton1.equals(ton1));
+    }
+
+    @Test
+    public void givenTypeCheckForTon_ShouldReturnEquals() {
+        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
+        Volume ton2 = new Volume(Volume.Unit.TONNE, 0.0);
+        Assertions.assertTrue(ton1.getClass().equals(ton2.getClass()));
+    }
 }
