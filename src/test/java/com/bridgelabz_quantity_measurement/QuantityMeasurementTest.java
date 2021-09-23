@@ -552,4 +552,72 @@ class QuantityMeasurementTest {
         Volume gm1 = new Volume(Volume.Unit.GRAM, 1000.0);
         ton1.sumOfWeight(gm1);
     }
+
+    @Test
+    public void given0CentigradeAnd0Centigrade_ShouldReturnEquals() {
+        Temparature centigrade1 = new Temparature(Temparature.Unit.CENTIGRADE, 0.0);
+        Temparature centigrade2 = new Temparature(Temparature.Unit.CENTIGRADE, 0.0);
+        Assertions.assertEquals(centigrade1, centigrade2);
+    }
+
+    @Test
+    public void given0CentigradeAnd1Centigrade_ShouldReturnNotEquals() {
+        Temparature centigrade1 = new Temparature(Temparature.Unit.CENTIGRADE, 0.0);
+        Temparature centigrade2 = new Temparature(Temparature.Unit.CENTIGRADE, 1.0);
+        Assertions.assertNotEquals(centigrade1, centigrade2);
+    }
+
+    @Test
+    public void given0CentigradeAndNullValue_ShouldReturnNotEquals() {
+        Temparature centigrade1 = new Temparature(Temparature.Unit.CENTIGRADE, 0.0);
+        Temparature centigrade2 = null;
+        Assertions.assertNotEquals(centigrade1, centigrade2);
+    }
+
+    @Test
+    public void givenReferenceCheckForCentigrade_ShouldReturnEquals() {
+        Temparature temparature1 = new Temparature(Temparature.Unit.CENTIGRADE, 2.0);
+        Assertions.assertTrue(temparature1.equals(temparature1));
+    }
+
+    @Test
+    public void givenTypeCheckForCentigrade_ShouldReturnEquals() {
+        Temparature centigrade1 = new Temparature(Temparature.Unit.CENTIGRADE, 0.0);
+        Temparature centigrade2 = new Temparature(Temparature.Unit.CENTIGRADE, 0.0);
+        Assertions.assertTrue(centigrade1.getClass().equals(centigrade2.getClass()));
+    }
+
+    @Test
+    public void given0FahrenheitAnd0Fahrenheit_ShouldReturnEquals() {
+        Temparature fahrenheit1 = new Temparature(Temparature.Unit.FAHRENHEIT, 0.0);
+        Temparature fahrenheit2 = new Temparature(Temparature.Unit.FAHRENHEIT, 0.0);
+        Assertions.assertEquals(fahrenheit1, fahrenheit2);
+    }
+
+    @Test
+    public void given0FahrenheitAnd1Fahrenheit_ShouldReturnNotEquals() {
+        Temparature fahrenheit1 = new Temparature(Temparature.Unit.FAHRENHEIT, 0.0);
+        Temparature fahrenheit2 = new Temparature(Temparature.Unit.FAHRENHEIT, 1.0);
+        Assertions.assertNotEquals(fahrenheit1, fahrenheit2);
+    }
+
+    @Test
+    public void given0FahrenheitAndNullValue_ShouldReturnNotEquals() {
+        Temparature fahrenheit1 = new Temparature(Temparature.Unit.FAHRENHEIT, 0.0);
+        Temparature fahrenheit2 = null;
+        Assertions.assertNotEquals(fahrenheit1, fahrenheit2);
+    }
+
+    @Test
+    public void givenReferenceCheckForFahrenheit_ShouldReturnEquals() {
+        Temparature fahrenheit1 = new Temparature(Temparature.Unit.FAHRENHEIT, 2.0);
+        Assertions.assertTrue(fahrenheit1.equals(fahrenheit1));
+    }
+
+    @Test
+    public void givenTypeCheckForFahrenheit_ShouldReturnEquals() {
+        Temparature fahrenheit1 = new Temparature(Temparature.Unit.FAHRENHEIT, 0.0);
+        Temparature fahrenheit2 = new Temparature(Temparature.Unit.FAHRENHEIT, 0.0);
+        Assertions.assertTrue(fahrenheit1.getClass().equals(fahrenheit2.getClass()));
+    }
 }
