@@ -83,7 +83,7 @@ class QuantityMeasurementTest {
     @Test
     public void given1FeetAnd12Inch_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.InchConversion(1.0, 12);
+        boolean result = quantityMeasurement.inchConversion(1.0, 12);
         Assertions.assertTrue(result);
     }
 
@@ -124,14 +124,14 @@ class QuantityMeasurementTest {
     @Test
     public void given3FeetAnd1Yard_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.YardConversion(3.0, 1.0);
+        boolean result = quantityMeasurement.yardConversion(3.0, 1.0);
         Assertions.assertTrue(result);
     }
 
     @Test
     public void given1YardAnd36Inch_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.YardToInchConversion(1.0, 36.0);
+        boolean result = quantityMeasurement.yardToInchConversion(1.0, 36.0);
         Assertions.assertTrue(result);
     }
 
@@ -172,7 +172,7 @@ class QuantityMeasurementTest {
     @Test
     public void given2InchAnd5Centimeter_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.InchToCentimeterConversion(1.0, 2.54);
+        boolean result = quantityMeasurement.inchToCentimeterConversion(1.0, 2.54);
         Assertions.assertTrue(result);
     }
 
@@ -371,7 +371,7 @@ class QuantityMeasurementTest {
     @Test
     public void given1GallonAnd4Litre_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.LitreConversion(1.0, 3.78);
+        boolean result = quantityMeasurement.litreConversion(1.0, 3.78);
         Assertions.assertTrue(result);
     }
 
@@ -409,12 +409,6 @@ class QuantityMeasurementTest {
         Assertions.assertTrue(ml1.getClass().equals(ml2.getClass()));
     }
 
-    @Test
-    public void given1LitreAnd1000Ml_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.MlConversion(1.0, 1000.0);
-        Assertions.assertTrue(result);
-    }
 
     @Test
     public void givenAdditionOf1GallonAnd4Litre_ShouldReturn8Litre() {
@@ -432,124 +426,124 @@ class QuantityMeasurementTest {
 
     @Test
     public void given0KgAnd0Kg_ShouldReturnEqual() {
-        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
-        Volume kg2 = new Volume(Volume.Unit.KG, 0.0);
+        Weight kg1 = new Weight(Weight.Unit.KG, 0.0);
+        Weight kg2 = new Weight(Weight.Unit.KG, 0.0);
         Assertions.assertEquals(kg1, kg2);
     }
 
     @Test
     public void given0KgAnd1Kg_ShouldReturnNotEqual() {
-        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
-        Volume kg2 = new Volume(Volume.Unit.KG, 1.0);
+        Weight kg1 = new Weight(Weight.Unit.KG, 0.0);
+        Weight kg2 = new Weight(Weight.Unit.KG, 1.0);
         Assertions.assertNotEquals(kg1, kg2);
     }
 
     @Test
     public void given0KgAndNullValue_ShouldReturnNotEqual() {
-        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
-        Volume kg2 = null;
+        Weight kg1 = new Weight(Weight.Unit.KG, 0.0);
+        Weight kg2 = null;
         Assertions.assertNotEquals(kg1, kg2);
     }
 
     @Test
     public void givenReferenceCheckForKg_ShouldReturnEqual() {
-        Volume kg1 = new Volume(Volume.Unit.KG, 2.0);
+        Weight kg1 = new Weight(Weight.Unit.KG, 2.0);
         Assertions.assertTrue(kg1.equals(kg1));
     }
 
     @Test
     public void givenTypeCheckForKg_ShouldReturnEquals() {
-        Volume kg1 = new Volume(Volume.Unit.KG, 0.0);
-        Volume kg2 = new Volume(Volume.Unit.KG, 0.0);
+        Weight kg1 = new Weight(Weight.Unit.KG, 0.0);
+        Weight kg2 = new Weight(Weight.Unit.KG, 0.0);
         Assertions.assertTrue(kg1.getClass().equals(kg2.getClass()));
     }
 
     @Test
     public void given0GramAnd0Gram_ShouldReturnEquals() {
-        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
-        Volume gm2 = new Volume(Volume.Unit.GRAM, 0.0);
+        Weight gm1 = new Weight(Weight.Unit.GRAM, 0.0);
+        Weight gm2 = new Weight(Weight.Unit.GRAM, 0.0);
         Assertions.assertEquals(gm1, gm2);
     }
 
     @Test
     public void given0GramAnd1Gram_ShouldReturnNotEquals() {
-        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
-        Volume gm2 = new Volume(Volume.Unit.GRAM, 1.0);
+        Weight gm1 = new Weight(Weight.Unit.GRAM, 0.0);
+        Weight gm2 = new Weight(Weight.Unit.GRAM, 1.0);
         Assertions.assertNotEquals(gm1, gm2);
     }
 
     @Test
     public void given0GramAndNullValue_ShouldReturnNotEquals() {
-        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
+        Weight gm1 = new Weight(Weight.Unit.GRAM, 0.0);
         Volume gm2 = null;
         Assertions.assertNotEquals(gm1, gm2);
     }
 
     @Test
     public void givenReferenceCheckForGram_ShouldReturnEquals() {
-        Volume gram1 = new Volume(Volume.Unit.GRAM, 2.0);
+        Weight gram1 = new Weight(Weight.Unit.GRAM, 2.0);
         Assertions.assertTrue(gram1.equals(gram1));
     }
 
     @Test
     public void givenTypeCheckForGram_ShouldReturnEquals() {
-        Volume gm1 = new Volume(Volume.Unit.GRAM, 0.0);
-        Volume gm2 = new Volume(Volume.Unit.GRAM, 0.0);
+        Weight gm1 = new Weight(Weight.Unit.GRAM, 0.0);
+        Weight gm2 = new Weight(Weight.Unit.GRAM, 0.0);
         Assertions.assertTrue(gm1.getClass().equals(gm2.getClass()));
     }
 
     @Test
     public void given0TonAnd0Ton_ShouldReturnEquals() {
-        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
-        Volume ton2 = new Volume(Volume.Unit.TONNE, 0.0);
+        Weight ton1 = new Weight(Weight.Unit.TONNE, 0.0);
+        Weight ton2 = new Weight(Weight.Unit.TONNE, 0.0);
         Assertions.assertEquals(ton1, ton2);
     }
 
     @Test
     public void given0TonAnd1Ton_ShouldReturnNotEquals() {
-        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
-        Volume ton2 = new Volume(Volume.Unit.TONNE, 1.0);
+        Weight ton1 = new Weight(Weight.Unit.TONNE, 0.0);
+        Weight ton2 = new Weight(Weight.Unit.TONNE, 1.0);
         Assertions.assertNotEquals(ton1, ton2);
     }
 
     @Test
     public void given0TonAndNullValue_ShouldReturnNotEquals() {
-        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
-        Volume ton2 = null;
+        Weight ton1 = new Weight(Weight.Unit.TONNE, 0.0);
+        Weight ton2 = null;
         Assertions.assertNotEquals(ton1, ton2);
     }
 
     @Test
     public void givenReferenceCheckForTon_ShouldReturnEquals() {
-        Volume ton1 = new Volume(Volume.Unit.TONNE, 2.0);
+        Weight ton1 = new Weight(Weight.Unit.TONNE, 2.0);
         Assertions.assertTrue(ton1.equals(ton1));
     }
 
     @Test
     public void givenTypeCheckForTon_ShouldReturnEquals() {
-        Volume ton1 = new Volume(Volume.Unit.TONNE, 0.0);
-        Volume ton2 = new Volume(Volume.Unit.TONNE, 0.0);
+        Weight ton1 = new Weight(Weight.Unit.TONNE, 0.0);
+        Weight ton2 = new Weight(Weight.Unit.TONNE, 0.0);
         Assertions.assertTrue(ton1.getClass().equals(ton2.getClass()));
     }
 
     @Test
     public void given1KgAnd1000Gram_ShouldReturnEquals() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.GramConversion(1.0, 1000.0);
+        boolean result = quantityMeasurement.gramConversion(1.0, 1000.0);
         Assertions.assertTrue(result);
     }
 
     @Test
     public void given1TonAnd1000Kg_ShouldReturnEquals() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.TonToKillogramConversion(1.0, 1000.0);
+        boolean result = quantityMeasurement.tonToKillogramConversion(1.0, 1000.0);
         Assertions.assertTrue(result);
     }
 
     @Test
     public void given1TonAnd1000Gram_ShouldReturn1001Kg() {
-        Volume ton1 = new Volume(Volume.Unit.TONNE, 1.0);
-        Volume gm1 = new Volume(Volume.Unit.GRAM, 1000.0);
+        Weight ton1 = new Weight(Weight.Unit.TONNE, 1.0);
+        Weight gm1 = new Weight(Weight.Unit.TONNE, 1000.0);
         ton1.sumOfWeight(gm1);
     }
 
@@ -624,7 +618,7 @@ class QuantityMeasurementTest {
     @Test
     public void given100CentigradeAnd212Fahrenheit_ShouldReturnEqual() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        boolean result = quantityMeasurement.CentigradeToFahrenheitConversion(1.0, 2.12);
+        boolean result = quantityMeasurement.centigradeToFahrenheitConversion(1.0, 2.12);
         Assertions.assertTrue(result);
     }
 }

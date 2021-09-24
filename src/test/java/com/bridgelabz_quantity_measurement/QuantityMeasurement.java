@@ -1,85 +1,58 @@
 package com.bridgelabz_quantity_measurement;
 
 public class QuantityMeasurement {
-    public boolean InchConversion(double feet, double inch){
+    public boolean inchConversion(double feet, double inch){
         double result = feet*12;
-        if(result == inch){
+        if(result == inch)
             return true;
-        }
-        else{
-            return false;
-        }
+        return false;
     }
-    public boolean YardConversion(double feet, double yard){
+    public boolean yardConversion(double feet, double yard){
         double result = yard*3;
-        if(result == feet){
+        if(result == feet)
             return true;
-        }
-        else{
-            return false;
-        }
+       return false;
     }
-    public boolean YardToInchConversion(double yard, double inch){
+    public boolean yardToInchConversion(double yard, double inch){
         double result = yard*36;
-        if(result == inch){
+        if(result == inch)
             return true;
-        }
-        else{
-            return false;
-        }
+        return false;
     }
-    public boolean InchToCentimeterConversion(double inch, double centimeter){
+    public boolean inchToCentimeterConversion(double inch, double centimeter){
         double result1 = inch*2.54;
-        if(result1 == centimeter){
+        if(result1 == centimeter)
             return true;
+        return false;
         }
-        else{
-            return false;
-        }
-    }
-    public boolean LitreConversion(double gallon, double litre){
+    public boolean litreConversion(double gallon, double litre){
         double result = gallon*3.78;
-        if(result == litre){
+        if(result == litre)
             return true;
-        }
-        else{
-            return false;
-        }
+        return false;
     }
-    public boolean MlConversion(double litre, double ml){
+    public boolean mlConversion(double litre, double ml){
         double result = litre*1000;
-        if(result == litre){
+        if(result == litre)
             return true;
-        }
-        else{
-            return false;
-        }
+       return false;
     }
-    public boolean GramConversion(double kg, double gram){
+    public boolean gramConversion(double kg, double gram){
         double result = kg*1000;
-        if(result == gram){
+        if(result == gram)
             return true;
-        }
-        else{
-            return false;
-        }
+       return false;
     }
-    public boolean TonToKillogramConversion(double ton, double kg){
+    public boolean tonToKillogramConversion(double ton, double kg){
         double result = ton*1000;
-        if(result == kg){
+        if(result == kg)
             return true;
-        }
-        else{
-            return false;
-        }
+       return false;
     }
-    public boolean CentigradeToFahrenheitConversion(double centigrade, double fahrenheit){
+    public boolean centigradeToFahrenheitConversion(double centigrade, double fahrenheit){
         double result = centigrade*2.12;
-        if(result == fahrenheit){
+        if(result == fahrenheit)
             return true;
-        }
-        else{
-            return false;
-        }
+        return false;
     }
 }
