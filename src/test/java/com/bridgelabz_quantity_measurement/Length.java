@@ -1,65 +1,16 @@
 package com.bridgelabz_quantity_measurement;
 
-public class Length {
-    public static final double FEET_TO_INCH = 12.0;
-    private static final double YARD_TO_FEET = 36.0;
-    private static final double INCH_TO_CENTIMETER = 2.54;
+public enum Length implements MeasurementUnits {
+    CENTI_METER(1 / 2.5), INCH(1), FEET(12), YARD(36);
 
-    enum Unit{ FEET, INCH, YARD, CENTIMETER };
+    public final double baseUnitConversion;
 
-    private final Unit unit;
-    private final double value;
-
-    public Length(Unit unit, double value) {
-        this.unit = unit;
-        this.value = value;
-    }
-
-    public boolean compare(Length that) {
-        if(this.unit.equals(that.unit))
-            return this.equals(that);
-        if(this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
-            return Double.compare(this.value*FEET_TO_INCH, that.value) == 0;
-        return false;
-    }
-
-    public boolean compareYardToFeet(Length that) {
-        if(this.unit.equals(that.unit))
-            return this.equals(that);
-        if(this.unit.equals(Unit.YARD) && that.unit.equals(Unit.FEET))
-            return Double.compare(this.value*YARD_TO_FEET, that.value) == 0;
-        return false;
-    }
-
-    public boolean compareInchToCentimeter(Length that) {
-        if(this.unit.equals(that.unit))
-            return this.equals(that);
-        if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.CENTIMETER))
-            return Double.compare(this.value*INCH_TO_CENTIMETER, that.value) == 0;
-        return false;
-    }
-
-    public Length sumOfLength(Length that) {
-        double sumOfInput = 0.0;
-        if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
-            sumOfInput = this.value + that.value;
-        else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
-            sumOfInput = this.value * FEET_TO_INCH + that.value;
-        else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
-            sumOfInput = this.value * FEET_TO_INCH + that.value * FEET_TO_INCH;
-        else if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.CENTIMETER))
-            sumOfInput = this.value + that.value / INCH_TO_CENTIMETER;
-        return new Length(Unit.INCH, sumOfInput);
+    Length(double baseUnitConversion) {
+        this.baseUnitConversion = baseUnitConversion;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null || getClass() != obj.getClass())
-            return false;
-        Length length = (Length) obj;
-        //if(this.unit.equals(((Length) obj).unit))
-        return Double.compare(length.value,value) == 0 && unit == length.unit;
+    public double convertToBaseUnit(QuantityMeasurement obj) {
+        return obj.value * baseUnitConversion;
     }
 }

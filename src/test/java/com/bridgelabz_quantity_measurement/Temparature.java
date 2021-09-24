@@ -1,25 +1,22 @@
 package com.bridgelabz_quantity_measurement;
 
-public class Temparature {
+import java.util.function.*;
 
-    enum Unit{ CENTIGRADE, FAHRENHEIT };
+enum Temperature implements MeasurementUnits {
+    DEG_F(true), DEG_C(false);
 
-    private final Unit unit;
-    private final double value;
+    private final Function<Double, Double> baseUnitConversion;
+    private final Function<Double, Double> degFToDegC = (Double degF) -> (degF - 32) * 5 / 9;
+    private final Function<Double, Double> degCToDegF =(Double degC) -> degC;
 
-    public Temparature(Unit unit, double value){
-        this.unit = unit;
-        this.value = value;
+    Temperature(boolean isDegF) {
+        if (isDegF) this.baseUnitConversion = degFToDegC;
+        else this.baseUnitConversion = degCToDegF;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null || getClass() != obj.getClass())
-            return false;
-        Temparature temparature = (Temparature) obj;
-        //if(this.unit.equals(((Length) obj).unit))
-        return Double.compare(temparature.value,value) == 0 && unit == temparature.unit;
+    public double convertToBaseUnit(QuantityMeasurement obj) {
+        return baseUnitConversion.apply(obj.value);
     }
+
 }
