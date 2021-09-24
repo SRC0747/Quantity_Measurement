@@ -365,4 +365,64 @@ class QuantityMeasurementTest {
         QuantityMeasurement actualSum = liter.sumOfQuantity(ml, Volume.LITER);
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
+    @Test
+    void given0GramAnd0Gram_ShouldReturnEqualWeight() {
+        QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+        QuantityMeasurement gram2 = new QuantityMeasurement(Weight.GRAM, 0.0);
+        Assertions.assertEquals(gram1, gram2);
+    }
+
+    @Test
+    void given0GramAnd1Gram_ShouldReturnNotEqualWeight() {
+        QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+        QuantityMeasurement gram2 = new QuantityMeasurement(Weight.GRAM, 1.0);
+        Assertions.assertNotEquals(gram1, gram2);
+    }
+
+    @Test
+    void given0GramAndNull_ShouldReturnNotEqualWeight() {
+        QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+        QuantityMeasurement gram2 = null;
+        Assertions.assertNotEquals(gram1, gram2);
+    }
+
+    @Test
+    void given0GramAnd0GramFromDiffRef_ShouldReturnNotEqualWeight() {
+        QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+        QuantityMeasurement gram2 = new QuantityMeasurement(Weight.GRAM, 0.0);
+        Assertions.assertNotSame(gram1, gram2);
+    }
+
+    @Test
+    void given0GramAnd0GramFromDiffType_ShouldReturnNotEqualWeight() {
+        QuantityMeasurement weight = new QuantityMeasurement(Weight.GRAM, 0.0);
+        QuantityMeasurement volume = new QuantityMeasurement(Volume.GALLON, 0.0);
+        Assertions.assertNotEquals(weight, volume);
+    }
+
+    @Test
+    void given1KGAnd1000Gram_WhenCompared_ShouldReturnEqualWeight() {
+        QuantityMeasurement kg = new QuantityMeasurement(Weight.KILOGRAM, 1.0);
+        QuantityMeasurement gram = new QuantityMeasurement(Weight.GRAM, 1000.0);
+        boolean compareCheck = kg.compare(gram);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1TonneAnd1000KG_WhenCompared_ShouldReturnEqualWeight() {
+        QuantityMeasurement tonne = new QuantityMeasurement(Weight.TONNE, 1.0);
+        QuantityMeasurement kg = new QuantityMeasurement(Weight.KILOGRAM, 1000.0);
+        boolean compareCheck = tonne.compare(kg);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1TonneAnd1000Gram_WhenAdded_ShouldReturn1001KG() {
+        QuantityMeasurement tonne = new QuantityMeasurement(Weight.TONNE, 1.0);
+        QuantityMeasurement gram = new QuantityMeasurement(Weight.GRAM, 1000.0);
+        QuantityMeasurement expectedSum = new QuantityMeasurement(Weight.KILOGRAM, 1001.0);
+        QuantityMeasurement actualSum = tonne.sumOfQuantity(gram, Weight.KILOGRAM);
+        Assertions.assertEquals(expectedSum, actualSum);
+    }
 }
