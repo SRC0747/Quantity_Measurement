@@ -425,4 +425,63 @@ class QuantityMeasurementTest {
         QuantityMeasurement actualSum = tonne.sumOfQuantity(gram, Weight.KILOGRAM);
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
+    @Test
+    void given0DegFAnd0DegF_ShouldReturnEqualTemperature() {
+        QuantityMeasurement temp1 = new QuantityMeasurement(Temperature.DEG_F, 0.0);
+        QuantityMeasurement temp2 = new QuantityMeasurement(Temperature.DEG_F, 0.0);
+        Assertions.assertEquals(temp1, temp2);
+    }
+
+    @Test
+    void given0DegFAnd1DegF_ShouldReturnNotEqualTemperature() {
+        QuantityMeasurement temp1 = new QuantityMeasurement(Temperature.DEG_F, 0.0);
+        QuantityMeasurement temp2 = new QuantityMeasurement(Temperature.DEG_F, 1.0);
+        Assertions.assertNotEquals(temp1, temp2);
+    }
+
+    @Test
+    void given0DegFAndNull_ShouldReturnNotEqualTemperature() {
+        QuantityMeasurement temp1 = new QuantityMeasurement(Temperature.DEG_F, 0.0);
+        QuantityMeasurement temp2 = null;
+        Assertions.assertNotEquals(temp1, temp2);
+    }
+
+    @Test
+    void given0DegFAnd0DegFFromDiffRef_ShouldReturnNotEqualTemperature() {
+        QuantityMeasurement temp1 = new QuantityMeasurement(Temperature.DEG_F, 0.0);
+        QuantityMeasurement temp2 = new QuantityMeasurement(Temperature.DEG_F, 1.0);
+        Assertions.assertNotSame(temp1, temp2);
+    }
+
+    @Test
+    void given0DegFAnd0DegFFromDiffType_ShouldReturnNotEqualTemperature() {
+        QuantityMeasurement temp = new QuantityMeasurement(Temperature.DEG_F, 0.0);
+        QuantityMeasurement weight = new QuantityMeasurement(Weight.GRAM, 0.0);
+        Assertions.assertNotEquals(temp, weight);
+    }
+
+    @Test
+    void given212DegFAnd100DegC_WhenCompared_ShouldReturnEqualTemp() {
+        QuantityMeasurement DegF = new QuantityMeasurement(Temperature.DEG_F, 212.0);
+        QuantityMeasurement DegC = new QuantityMeasurement(Temperature.DEG_C, 100.0);
+        boolean compareCheck = DegF.compare(DegC);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given77DegFAnd25DegC_WhenCompared_ShouldReturnEqualTemp() {
+        QuantityMeasurement DegF = new QuantityMeasurement(Temperature.DEG_F, 77.0);
+        QuantityMeasurement DegC = new QuantityMeasurement(Temperature.DEG_C, 25.0);
+        boolean compareCheck = DegF.compare(DegC);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given25DegCAnd77DegF_WhenCompared_ShouldReturnEqualTemp() {
+        QuantityMeasurement DegC = new QuantityMeasurement(Temperature.DEG_C, 25.0);
+        QuantityMeasurement DegF = new QuantityMeasurement(Temperature.DEG_F, 77.0);
+        boolean compareCheck = DegC.compare(DegF);
+        Assertions.assertTrue(compareCheck);
+    }
 }
